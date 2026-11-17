@@ -30,7 +30,7 @@ const HUB = {
     { id: "aion2", name: "Aion 2", letter: "A", color: "#e0b04b", iconImg: "assets/icon-aion2.webp", wordmark: ["Aion 2"], h: 262, tabs: TABS,
       headline: "Aion 2", text: "", cta: "TWICE Website", ctaHref: "https://twice-legion-hub.onrender.com/",
       /* the photos that rotate behind the page. Add more here as { src: "assets/your-photo.webp" } */
-      media: [{ src: "assets/media-raids.webp" }, { src: "assets/media-abyss.webp" }, { src: "assets/media-photoshoot.webp" }],
+      media: [{ src: "assets/gallery-1.webp" }, { src: "assets/gallery-2.webp" }, { src: "assets/gallery-3.webp" }, { src: "assets/gallery-4.webp" }, { src: "assets/gallery-5.webp" }],
       /* bottom left: how long we have been playing (counts up by itself every day) and a link to the game's own news */
       launch: { since: "2026-09-30", sinceLabel: "September 30", newsText: "Game News", newsHref: "https://aion2.plaync.com/en-us/board/notice/list" },
       news: [
