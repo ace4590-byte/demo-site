@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo Site</title>
+<style>
+  :root { --bg:#0b0b0c; --panel:#151517; --line:#2a2a2e; --text:#f4f1ec; --muted:#9b978f; --accent:#7f8cff; }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; display:grid; place-items:center; padding:24px 16px; background:var(--bg); color:var(--text);
+         font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { width:min(520px,100%); text-align:center; }
+  h1 { font-size:clamp(34px,8vw,52px); margin:0 0 8px; letter-spacing:.01em; }
+  p.lead { color:var(--muted); margin:0 0 28px; font-size:17px; line-height:1.5; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:20px; margin-bottom:16px; }
+  .clocks { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .clock b { display:block; font-size:clamp(22px,6vw,30px); font-variant-numeric:tabular-nums; }
+  .clock span { font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
+  button { font:inherit; font-weight:700; color:#0b0b0c; background:var(--accent); border:0; border-radius:12px; padding:12px 22px; cursor:pointer; }
+  button:active { transform:scale(.97); }
+  .count { font-size:44px; font-weight:800; margin:6px 0 14px; font-variant-numeric:tabular-nums; }
+  footer { margin-top:22px; color:var(--muted); font-size:13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>It works</h1>
+  <p class="lead">If you can read this, your site is live and anyone with the link can see it.</p>
+
+  <div class="card clocks">
+    <div class="clock"><b id="pt">--:--:--</b><span>Pacific</span></div>
+    <div class="clock"><b id="et">--:--:--</b><span>Eastern</span></div>
+  </div>
+
+  <div class="card">
+    <div class="count" id="n">0</div>
+    <button id="tap" type="button">Tap me</button>
+  </div>
+
+  <footer>A small demo made to practice putting a site online from GitHub.</footer>
+</main>
+<script>
+  const fmt = (zone) => new Intl.DateTimeFormat("en-US", { timeZone: zone, hour: "numeric", minute: "2-digit", second: "2-digit" });
+  const pt = fmt("America/Los_Angeles"), et = fmt("America/New_York");
+  const tick = () => {
+    const now = new Date();
+    document.getElementById("pt").textContent = pt.format(now);
+    document.getElementById("et").textContent = et.format(now);
+  };
+  tick(); setInterval(tick, 1000);
+  let n = 0;
+  document.getElementById("tap").onclick = () => { document.getElementById("n").textContent = ++n; };
+</script>
+</body>
+</html>
