@@ -93,7 +93,7 @@ const keep = (k, v) => { try { if (v === undefined) return localStorage.getItem(
 const state = { game: "home", tab: 0, logged: keep("hub-demo-login") === "1", ptab: "list", q: "", shut: {},
   unmuted: keep("hub-muted") !== "1",   // music is on from the start; it stays off for people who turned it off before
   waiting: false,                       // true while the browser is holding the music back until the first click
-  volOpen: false, scene: false,         // the Home scene starts paused (a still picture)
+  volOpen: false, scene: true,          // the Home scene plays by default; the camera button pauses it (a still picture)
   vol: Math.min(1, Math.max(0, Number(keep("hub-vol")) || 0.2)), closed: window.innerWidth <= 960 };
 const gameOf = (id) => HUB.games.find((g) => g.id === id) || HUB.games[0];
 const gameByName = (n) => HUB.games.find((g) => g.name === n);
