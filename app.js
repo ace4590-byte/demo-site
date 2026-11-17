@@ -23,9 +23,9 @@ const HUB = {
       scene: "assets/home-scene.gif", sceneStill: "assets/home-scene-still.webp", animated: true,
       featured: { tag: "Featured", title: "We are currently playing Aion 2 as TWICE, join us!", link: { text: "TWICE", href: "https://twice-legion-hub.onrender.com/" }, image: "assets/news-aion2.webp" },
       news: [
-        { kind: "tag", tag: "Coming soon", title: "Minecraft Cobblemon coming soon!", image: "assets/news-cobblemon.webp", art: art(150) },
-        { kind: "tag", tag: "Coming soon", title: "Chrono Odyssey, Q2 2027", image: "assets/news-chrono.webp", art: art(20) },
-        { kind: "tag", tag: "Coming soon", title: "Guild Wars 3, Q4 2027", image: "assets/news-gw3.webp", art: art(300) },
+        { kind: "tag", tag: "Coming Soon", title: "Minecraft Cobblemon Coming Soon!", image: "assets/news-cobblemon.webp", art: art(150) },
+        { kind: "tag", tag: "Coming Soon", title: "Chrono Odyssey, Q2 2027", image: "assets/news-chrono.webp", art: art(20) },
+        { kind: "tag", tag: "Coming Soon", title: "Guild Wars 3, Q4 2027", image: "assets/news-gw3.webp", art: art(300) },
       ] },
     { id: "aion2", name: "Aion 2", letter: "A", color: "#e0b04b", iconImg: "assets/icon-aion2.webp", wordmark: ["Aion 2"], h: 262, tabs: TABS,
       headline: "Aion 2", text: "", cta: "TWICE Website", ctaHref: "https://twice-legion-hub.onrender.com/",

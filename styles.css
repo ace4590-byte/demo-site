@@ -331,3 +331,19 @@ a.cta { display: inline-flex; align-items: center; text-decoration: none; }
   .topbar { right: 16px; }
   .tab { padding: 0 11px; }
 }
+
+/* with the members panel hidden, the three cards sit against the right edge of the window, with the same margin as the Home page buttons */
+@media (min-width: 701px) { .app.closed .news { right: 76px; } }
+@media (min-width: 701px) and (max-width: 1180px) { .app.closed .news { right: 40px; } }
+
+/* the three cards shrink to fit when the window is not very wide, so they never run into the box on the bottom left;
+   with the members panel open and a narrow window they step aside, and come back when the panel is hidden */
+@media (min-width: 961px) {
+  .app { --news-r: 371px; }
+  .app.closed { --news-r: 76px; }
+  .news { right: var(--news-r); width: min(590px, calc(100vw - 490px - var(--news-r))); }
+  .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .cards .thumb { height: auto; aspect-ratio: 186 / 104; }
+}
+@media (min-width: 961px) and (max-width: 1180px) { .app { --news-r: 338px; } .app.closed { --news-r: 40px; } }
+@media (min-width: 961px) and (max-width: 1229px) { .app:not(.closed) .news { display: none; } }
